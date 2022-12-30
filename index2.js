@@ -41,3 +41,105 @@ function stray(numbers){
  }
  
 //  console.log(stray([1, 1, 1, 5, 1, 1]));
+
+// challenge 11: first recursive function --count up
+function countUp(num){
+    if(num >= 5){
+        console.log(`counted all numbers up till ${num-1}`);
+        return num;
+    }
+    console.log(num);
+    num++;
+    countUp(num);
+}
+
+// console.log(countUp(1));
+
+
+// challenge 12: second recursive function --count down
+ function countDown(num){
+    if(num <= 0){
+        console.log(`counted all numbers down till ${num+1}`);
+        return num;
+    }
+    console.log(num);
+    num--;
+    countDown(num);
+ }
+
+//  console.log(countDown(10));
+
+// challenge 12: third recursive function --sum numbers within a range
+function sumRange(num){
+    if(num === 1){
+        return 1;
+    }else{
+        return num + sumRange(num-1);
+    }
+}
+
+// console.log(sumRange(7));
+
+// --------------OR--------------
+
+// note: that the refactor/clean up of the above function goes thus...
+function sumRange(num){
+    if(num === 1) return 1;
+    return num + sumRange(num-1);
+}
+
+// console.log(sumRange(7));
+
+// challenge 13: fourth recursive function --factorial of a number
+function factorial(num){
+    if(num === 1){
+        return 1;
+    }else{
+        return num * factorial(num - 1);
+    }
+}
+
+// console.log(factorial(5));
+
+// challenge 14: fifth recursive function --get the odd numbers from the given array
+function collectOddNumbers(arr){
+    let oddNumbers = [];
+    
+    function helper(helperInput){
+        if(helperInput.length === 0){
+            return helperInput.length;
+        }
+        if(helperInput[0] % 2 != 0){
+            oddNumbers.push(helperInput[0])
+        }
+        helper(helperInput.slice(1))
+    }
+
+    helper(arr);
+    return oddNumbers;
+
+}
+
+// console.log(collectOddNumbers([1,2,3,4,5,6,7,8,9,10]));
+
+// challenge 15: sixth recursive function --collect the even number from the given array
+function collectEvenNumbers(arr){
+    let evenNumbers = [];
+
+    function helper(helperInput){
+        if(helperInput.length === 0){
+            return;
+        }
+        if(helperInput[0] % 2 === 0){
+            evenNumbers.push(helperInput[0])
+        }
+        helper(helperInput.slice(1))
+    }
+
+    helper(arr)
+    return evenNumbers;
+}
+
+// console.log(collectEvenNumbers([1,2,3,4,5,6,7,8,9,10]));
+
+// solve tons of questions on recursion...
