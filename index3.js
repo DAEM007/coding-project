@@ -117,3 +117,13 @@ function sumSquares(arr){
 // console.log(sumSquares([[1,2],3]));
 // console.log(sumSquares([[[[[[[[[1]]]]]]]]]));
 
+// challenge 22: The function should return an array containing repetitions of the number argument. For instance, replicate(3, 5) should return [5,5,5]. If the times argument is negative, return an empty array.
+function replicate(times, num){
+    if(times <= 0){
+        return [];
+    }else{
+        return [num].concat(replicate(times - 1, num));
+    }
+}
+
+// console.log(replicate(3, 5));
