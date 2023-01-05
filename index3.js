@@ -82,3 +82,38 @@ function productOfArray(arr) {
 }
 
 // console.log(productOfArray([1,2,3]));
+
+// challenge 20: Given a multi-dimensional integer array, return the total number of integers stored inside this array
+function totalIntegers(arr){
+    let total = 0;
+    for(let index in arr){
+        if(typeof arr[index] === "number"){
+            total += 1;
+        }
+        if(typeof arr[index] === "object" && arr[index].length !== 0){
+            total += totalIntegers(arr[index]);
+        }
+    }
+    return total;
+}
+
+// console.log(totalIntegers([[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]]));
+
+// challenge 21: Write a function that sums squares of numbers in list that may contain more lists
+function sumSquares(arr){
+    let total = 0;
+    for(let index in arr){
+       if(typeof arr[index] === "number"){
+           total += Math.pow(arr[index], 2);
+       }
+        if(typeof arr[index] === "object"){
+            total += sumSquares(arr[index]);
+        }
+    }
+    return total;
+}
+
+// console.log(sumSquares([10,[[10],10],[10]]));
+// console.log(sumSquares([[1,2],3]));
+// console.log(sumSquares([[[[[[[[[1]]]]]]]]]));
+
