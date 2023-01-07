@@ -22,7 +22,7 @@ function myPow(x, n){
 
 // console.log(myPow(2, 6));
 
-// challenge 24 : Given an integer n, return true if it is a power of two. Otherwise, return false. An integer n is a power of two, if there exists an integer x such that n == 2 ** x.
+// challenge 24 : Given an integer n, return true if it is a power of two. Otherwise, return false. An integer n is a power of two, if there exists an integer x such that n == 2 ** x...problem: 231
 function isPowerOfTwo(n){
     if(n === 1){
         return true;
@@ -35,3 +35,28 @@ function isPowerOfTwo(n){
 
 // console.log(isPowerOfTwo(3));
 
+// challenge 25 : leetcode problem 326: powers of three
+function isPowerOfThree(n) {
+    if(n === 1){
+        return true;
+    }else if(n && n % 2 !== 0){
+        return isPowerOfThree(n / 3);
+    }else{
+        return false;
+    }
+}
+
+// console.log(isPowerOfThree(27));
+
+// challenge 26 : leetcode problem 342 : powers of four
+function isPowerOfFour(n) {
+    if(n === 1){
+        return true;
+    }else if(n && n % 2 === 0){
+        return isPowerOfFour(n / 4);
+    }else{
+        return false;
+    }
+}
+
+// console.log(isPowerOfFour(64));
