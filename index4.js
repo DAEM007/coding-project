@@ -1,4 +1,4 @@
-// challenge 23: Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+// challenge 23: Implement pow(x, n), which calculates x raised to the power n (i.e., xn)...leetcode problem: 50
 function myPow(x, n){
     
     function Pow(base, exp) {
@@ -21,3 +21,17 @@ function myPow(x, n){
 }
 
 // console.log(myPow(2, 6));
+
+// challenge 24 : Given an integer n, return true if it is a power of two. Otherwise, return false. An integer n is a power of two, if there exists an integer x such that n == 2 ** x.
+function isPowerOfTwo(n){
+    if(n === 1){
+        return true;
+    }else if(n && n % 2 === 0){
+        return isPowerOfTwo(n / 2);
+    }else{
+        return false;
+    }
+}
+
+// console.log(isPowerOfTwo(3));
+
