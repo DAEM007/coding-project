@@ -60,3 +60,21 @@ function isPowerOfFour(n) {
 }
 
 // console.log(isPowerOfFour(64));
+
+// challenge 27: leetcode problem 509 : fibonacci number
+function fib(n){
+    if(n === 0){
+        return 0;
+    }else if(n === 1){
+        return 1;
+    }else if(n){
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
+// You can refactor the above by doing the below
+// function fib(n){
+//     return n === 0 ? 0 : n === 1 ? 1 : fib(n - 1) + fib(n - 2);
+// }
+
+// console.log(fib(6));
