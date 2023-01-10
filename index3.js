@@ -127,3 +127,24 @@ function replicate(times, num){
 }
 
 // console.log(replicate(3, 5));
+
+// Extra challenge 1 : You are given an array of values. Sum every number value in the array, and any nested arrays (to any depth). Ignore all other types of values.
+function arraySum(arr) {
+    let total = 0;
+
+    for(let num in arr){
+        if(typeof arr[num] === "number"){
+            total += arr[num];
+        }else if(typeof arr[num] === "object"){
+            return total += arraySum(arr[num]);
+        }
+    }
+    
+    return total;
+    
+}
+
+// console.log(arraySum([2, 2, [1, 2]]));
+
+
+
