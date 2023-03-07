@@ -22,3 +22,9 @@ function factorial(n){
 // console.log(factorial(5));
 // note that the big-o of the above algorithm is o(n).
 
+// problem 30: Determine if a number "n" is prime or not
+function prime(n){
+    
+}
+
+console.log(prime(5));
