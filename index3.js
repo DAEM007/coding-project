@@ -105,8 +105,7 @@ function sumSquares(arr){
     for(let index in arr){
        if(typeof arr[index] === "number"){
            total += Math.pow(arr[index], 2);
-       }
-        if(typeof arr[index] === "object"){
+       }else if(typeof arr[index] === "object"){
             total += sumSquares(arr[index]);
         }
     }
