@@ -24,7 +24,44 @@ function factorial(n){
 
 // problem 30: Determine if a number "n" is prime or not
 function prime(n){
-    
+    if(n < 2){
+        return false;
+    }
+    for(let i = 2; i < n; i++){
+        if(n % i === 0){
+            return false;
+        }
+    }
+    return true;
 }
 
-console.log(prime(5));
+// console.log(prime(19));
+// note: that the time complexity for the above algorithm is o(n).
+
+// problem 31: Resolve Power of two from index4.js without recursion
+function powerTwo(n){
+    if(n < 1){
+        return false;
+    }
+    while(n > 1){
+        if(n % 2 !== 0){
+            return false;
+        }
+        n = n / 2;
+    }
+    return true;
+}
+
+// console.log(powerTwo(8));
+// Note: You might want to think that the big - o of the algorithm above is o(n) but notice what is happening to the input of the algorithm in the loop...we see here that the input is reduced by half hence making the big-o of the algorithm to be o(logn).
+
+// solving the above in constant time using the bitwise operator
+function powerTwoBitwise(n){
+    if(n < 1){
+        return false;
+    }else{
+        return (n & (n - 1)) === 0;
+    }
+}
+
+// console.log(powerTwoBitwise(8));
