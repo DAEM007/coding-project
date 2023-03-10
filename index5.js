@@ -65,3 +65,14 @@ function powerTwoBitwise(n){
 }
 
 // console.log(powerTwoBitwise(8));
+
+// Review of the fibonacci sequence with the big o
+function fib(n){
+    if(n < 2){
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+// console.log(fib(6));
+// Note here that as the value of the input grow the time complexity increases by 2^n...so the big o of the recursive solution above is o(2^n) and it's important to note that this is far worse than the iterarive solution which is o(n)...
