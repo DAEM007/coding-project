@@ -42,3 +42,28 @@ function BinarySearch(arr, t){
 
 // console.log(BinarySearch([1,2,3,4,5,6,7,8], 5));
 // Note: The big - o for this algorithm is actually o(logn) as opposed to o(n)...This is because as the input grows, the input always reduced by half...
+
+// Recursive Binary search
+// Now let's solve the same problem with recursion
+function RecursiveBS(arr, t) {
+    return HelperSearch(arr, t, 0, arr.length - 1)
+}
+
+function HelperSearch(arr, t, left, right) {
+    if(left > right) {
+        return -1;
+    }
+    let middle = Math.floor((left + right) / 2);
+    if(t === arr[middle]) {
+        return middle;
+    }
+    if(t < arr[middle]) {
+        return HelperSearch(arr, t, left, middle - 1);
+    }else {
+        return HelperSearch(arr, t, middle + 1, right)
+    }
+}
+
+
+// console.log(RecursiveBS([1,2,3,4,5,6,7,8], 5));
+// Note: Here that the big -o of this algorithm is also o(logn) since as the input grows it reduces by half.
