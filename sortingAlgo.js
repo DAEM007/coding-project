@@ -15,6 +15,7 @@ function BubbleSort(arr) {
     } while(swapped);
 }
 
-const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
-BubbleSort(array);
-console.log(array);
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// BubbleSort(array);
+// console.log(array);
+// Note: Here that the big - o of the algorithm is o(n^2) since there are two nested loops...notice that this is a poor algorithm just as we have established...
