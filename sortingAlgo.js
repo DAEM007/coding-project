@@ -19,3 +19,22 @@ function BubbleSort(arr) {
 // BubbleSort(array);
 // console.log(array);
 // Note: Here that the big - o of the algorithm is o(n^2) since there are two nested loops...notice that this is a poor algorithm just as we have established...
+// Example 2: Given an array return the sorted array in descending order
+function BubbleSortDesc(arr) {
+    let swapped;
+    do {
+        swapped = false;
+        for(let i = 0; i < arr.length - 1; i++){
+            if(arr[i] < arr[i+1]) {
+                let temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                swapped = true;
+            }
+        }
+    } while(swapped);
+}
+
+const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+BubbleSortDesc(array);
+console.log(array);
