@@ -35,6 +35,9 @@ function BubbleSortDesc(arr) {
     } while(swapped);
 }
 
-const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
-BubbleSortDesc(array);
-console.log(array);
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// BubbleSortDesc(array);
+// console.log(array);
+
+// Insertion sort
+// Example 3: Solve Example 1 using insertion sort algorithm
