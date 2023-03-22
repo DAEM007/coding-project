@@ -41,3 +41,41 @@ function BubbleSortDesc(arr) {
 
 // Insertion sort
 // Example 3: Solve Example 1 using insertion sort algorithm
+function InsertionSort(arr) {
+    // since we assume that first element in the array is sorted
+    // Hence, we traverse the unsorted part
+    // Note we use i for sorted index and j for unsorted index
+    for(let i = 1; i < arr.length; i++) {
+        let numberToInsert = arr[i];
+        let j = i - 1;
+        while(j >= 0 && arr[j] > numberToInsert) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = numberToInsert;
+    }
+}
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// InsertionSort(array);
+// console.log(array);
+// Note: Big-o = o(n^2)...since as the inputs(number of elements in the array)increases, the number of comparisms increases by square of that number...also recall we have two nested loops
+
+// Example 4: implement insertion sort in descending order for Example 3
+function InsertionSortDesc(arr) {
+    // since we assume that the first element in the array is sorted
+    for(let i = 1; i < arr.length; i++) {
+        let numberToInsert = arr[i];
+        let j = i - 1;
+        while(j >= 0 && arr[j] < numberToInsert) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = numberToInsert;
+    }
+}
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// InsertionSortDesc(array);
+// console.log(array);
+// Note: The big-o = o(n^2)...since as the input grows the number of comparism increases by square of the input...recall that we have two nested loops
