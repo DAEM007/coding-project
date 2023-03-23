@@ -61,7 +61,7 @@ function InsertionSort(arr) {
 // console.log(array);
 // Note: Big-o = o(n^2)...since as the inputs(number of elements in the array)increases, the number of comparisms increases by square of that number...also recall we have two nested loops
 
-// Example 4: implement insertion sort in descending order for Example 3
+// Example 4: Implement insertion sort in descending order for Example 3
 function InsertionSortDesc(arr) {
     // since we assume that the first element in the array is sorted
     for(let i = 1; i < arr.length; i++) {
@@ -79,3 +79,51 @@ function InsertionSortDesc(arr) {
 // InsertionSortDesc(array);
 // console.log(array);
 // Note: The big-o = o(n^2)...since as the input grows the number of comparism increases by square of the input...recall that we have two nested loops
+
+// Quick sort
+// Example 5: Implement a quick sort in ascending order for Example 3
+function quickSort(arr) {
+    if(arr.length < 2) {
+        return arr;
+    }
+    let pivot = arr[arr.length - 1];
+    let left = [];
+    let right = [];
+    for(let i = 0; i < arr.length - 1; i++) {
+        if(arr[i] > pivot) {
+            right.push(arr[i]);
+        } else {
+            left.push(arr[i]);
+        }
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// console.log(quickSort(array));
+
+// Note: big-o(worst case) = o(n^2);
+// avg case = o(nlogn);
+
+// Example 6: Implement quick sort for Eample 3 in descending order
+function quickSortDesc(arr) {
+    if(arr.length < 2) {
+        return arr;
+    }
+    let pivot = arr[arr.length - 1];
+    let left = [];
+    let right = [];
+    for(let i = 0; i < arr.length - 1; i++) {
+        if(arr[i] > pivot) {
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
+        }
+    }
+    return [...quickSortDesc(left), pivot, ...quickSortDesc(right)];
+}
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// console.log(quickSortDesc(array));
+// Note: big-o(worst case) = o(n^2);
+// avg case = o(nlogn);
