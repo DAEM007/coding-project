@@ -127,3 +127,60 @@ function quickSortDesc(arr) {
 // console.log(quickSortDesc(array));
 // Note: big-o(worst case) = o(n^2);
 // avg case = o(nlogn);
+
+// Merge Sort
+// Example 7: Implement merge sort for Example 3 in ascending order
+function mergeSort(arr) {
+    if(arr.length === 1) {
+        return arr;
+    }
+    let middle = Math.floor(arr.length / 2);
+    let leftArr = arr.slice(0, middle);
+    let rightArr = arr.slice(middle);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+function merge(left, right) {
+    let sorted = [];
+    while(left.length && right.length) {
+        if(left[0] < right[0]) {
+            sorted.push(left.shift());
+        } else {
+            sorted.push(right.shift());
+        }
+    }
+    return [...sorted, ...left, ...right];
+}
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// console.log(mergeSort(array));
+// Note: big- o = o(nlogn) since for the first part of the algorithm we see that we have a logn complexity since we are dividing the input by half as the input grows... while in the second part of the algorithm we see that we have a n complexity owing to the single loop.
+
+// Example 8: Implement merge sort for Example 3 in descending order
+function mergeSortDesc(arr) {
+    if(arr.length === 1) {
+        return arr;
+    }
+    let middle = Math.floor(arr.length / 2);
+    let leftArr = arr.slice(0, middle);
+    let rightArr = arr.slice(middle);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+function merge(left, right) {
+    let sorted = [];
+    while(left.length && right.length) {
+        if(left[0] < right[0]) {
+            sorted.push(right.shift());
+        } else {
+            sorted.push(left.shift());
+        }
+    }
+    return [...sorted, ...left, ...right];
+}
+
+
+// const array = [-6, -2, -4, 5, 7, 3, 10, 9, 8];
+// console.log(mergeSortDesc(array));
+//Note: Note: big- o = o(nlogn) since for the first part of the algorithm we see that we have a logn complexity since we are dividing the input by half as the input grows... while in the second part of the algorithm we see that we have a n complexity owing to the single loop. 
+
