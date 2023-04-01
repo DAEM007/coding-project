@@ -72,11 +72,10 @@ class stackObj {
     }
 
     size() {
-        if(this.isEmpty()) {
-            console.log('The stack is empty!');
-            return;
+        if(!this.isEmpty()) {
+            return this.counter;
         }
-        return this.counter;
+        console.log('The stack is empty!');
     }
 
     print() {
@@ -91,6 +90,7 @@ const stack2 = new stackObj({});
 // console.log(stack2.push('Buggati'));
 // console.log(stack2.push('Lamborghini'));
 // console.log(stack2.pop());
+// console.log(stack2.counter);
 // console.log(stack2.peek());
 // console.log(stack2.isEmpty());
 // console.log(stack2.size());
