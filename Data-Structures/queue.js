@@ -93,3 +93,85 @@ const queue1 = new Queue();
 // console.log(queue1.peek());    
 // console.log(queue1.size());
 // queue1.print();
+
+// cirular queue implementation
+
+class circularQueue {
+    constructor(capacity) {
+        this.items = new Array(capacity);
+        this.capacity = capacity;
+        this.currentLength = 0;
+        this.front = -1;
+        this.rear = -1;
+    }
+
+    isFull() {
+        return this.currentLength === this.capacity;
+    }
+
+    isEmpty() {
+        return this.currentLength === 0;
+    }
+
+    enqueue(element) {
+        if(this.isFull()) {
+            console.log(`Can't perform enqueue operation on a full queue.`);
+        }
+        this.rear = (this.rear + 1) % this.capacity;
+        this.items[this.rear] = element;
+        this.currentLength++;
+        if(this.front === -1) {
+            this.front = this.rear;
+        }
+    }
+
+    dequeue() {
+        if(this.isEmpty()) {
+            console.log(`sorry! can't perform a dequeue operation on an empty queue.`);
+        }else {
+            let item = this.items[this.front];
+            this.items[this.front] = null;
+            this.front = (this.front + 1) % this.capacity;
+            this.currentLength--;
+            if(this.isEmpty()) {
+                this.front = -1;
+                this.rear = -1;
+            }
+            return item;
+        }
+    }
+
+    peek() {
+        if(this.isEmpty()) {
+           console.log(`Can't get peek element on an empty queue.`); 
+        }
+        return this.items[this.front];
+    }
+
+    print() {
+        if(this.isEmpty()) {
+            console.log(`Queue is Empty.`);
+        }
+        let i;
+        let str = '';
+        for(i = this.front; i !== this.rear; i = (i+1) % this.capacity) {
+            str += this.items[i] + ' ';
+        }
+        str += this.items[i];
+        console.log(str);
+    }
+
+}
+
+const circular1 = new circularQueue(5);
+circular1.enqueue("ferrari");
+circular1.enqueue("BMW");
+circular1.enqueue("Buggatti");
+circular1.enqueue("Lamborghini");
+circular1.enqueue("Ford");
+circular1.dequeue();
+console.log(circular1.peek());
+console.log(circular1.isFull());
+console.log(circular1.isEmpty());
+console.log(circular1.print());
+
