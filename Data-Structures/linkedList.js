@@ -45,6 +45,25 @@ class linkedList {
         this.size++;
     }
 
+    insert(index, value) {
+        if(index < 0 || index > this.size) {
+            console.log('Index to insert node is out of bound');
+            return;
+        }
+        if(index === 0) {
+            this.prepend(value);
+        } else {
+            const node = new Node(value);
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++) {
+                prev = prev.next;
+            }
+            node.next = prev.next;
+            prev.next = node;
+            this.size++;
+        }
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log('The linked list is Empty!');
@@ -64,6 +83,22 @@ const linkedList1 = new linkedList();
 console.log(`Is linkedListEmpty? : ${linkedList1.isEmpty()}`);
 console.log(`linkedList size : ${linkedList1.getSize()}`);
 
+// insert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // prepend
 
 // linkedList1.print();
@@ -76,10 +111,10 @@ console.log(`linkedList size : ${linkedList1.getSize()}`);
 
 // append
 
-linkedList1.print();
-linkedList1.append('ferrari');
-linkedList1.print();
-linkedList1.append('BMW');
-linkedList1.append('Bugatti');
-linkedList1.append('Lamborghini');
-linkedList1.print();
+// linkedList1.print();
+// linkedList1.append('ferrari');
+// linkedList1.print();
+// linkedList1.append('BMW');
+// linkedList1.append('Bugatti');
+// linkedList1.append('Lamborghini');
+// linkedList1.print();
