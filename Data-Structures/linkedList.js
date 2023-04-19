@@ -112,6 +112,23 @@ class linkedList {
         }
     }
 
+    search(value) {
+        if(this.isEmpty()) {
+            console.log('cannot perform a search on an empty list.');
+            return -1;
+        }
+        let index = 0;
+        let curr = this.head;
+        while(curr) {
+            if(curr.value === value) {
+                return index;
+            }
+            curr = curr.next;
+            index++;
+        }
+        return -1;
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log('The linked list is Empty!');
@@ -144,15 +161,19 @@ linkedList1.insert(2, 'BMW');
 linkedList1.print();
 console.log(`linkedList size: ${linkedList1.getSize()}`);
 
+// search
+
+console.log(linkedList1.search('ferrari'));
+
 // removeValue
 
-linkedList1.removeValue('ferrari');
-linkedList1.print();
-linkedList1.removeValue('buggatti');
-linkedList1.print();
-console.log(linkedList1.removeValue('ford'));
-linkedList1.print();
-console.log(`linkedList size: ${linkedList1.getSize()}`);
+// linkedList1.removeValue('ferrari');
+// linkedList1.print();
+// linkedList1.removeValue('buggatti');
+// linkedList1.print();
+// console.log(linkedList1.removeValue('ford'));
+// linkedList1.print();
+// console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 // removeFrom
 
