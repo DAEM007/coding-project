@@ -1,3 +1,4 @@
+
 // LinkedList implementation
 class Node {
     constructor(value) {
@@ -85,6 +86,32 @@ class linkedList {
         return removedNode;
     }
 
+    removeValue(value) {
+        if(this.isEmpty()) {
+            console.log('cannot remove value from an empty list');
+            return null;
+        }
+        let removedNode;
+        if(this.head.value === value) {
+            removedNode = this.head;
+            this.head = removedNode.next;
+            this.size--;
+            return removedNode.value;
+        } else {
+            let prev = this.head;
+            while(prev.next && prev.next.value !== value) {
+                prev = prev.next;
+            }
+            if(prev.next) {
+                removedNode = prev.next;
+                prev.next = removedNode.next;
+                this.size--;
+                return removedNode.value;
+            }
+            return null;
+        }
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log('The linked list is Empty!');
@@ -117,15 +144,25 @@ linkedList1.insert(2, 'BMW');
 linkedList1.print();
 console.log(`linkedList size: ${linkedList1.getSize()}`);
 
-// removeFrom
-linkedList1.removeFrom(10);
+// removeValue
+
+linkedList1.removeValue('ferrari');
 linkedList1.print();
-linkedList1.removeFrom(0);
+linkedList1.removeValue('buggatti');
 linkedList1.print();
-linkedList1.removeFrom(1);
+console.log(linkedList1.removeValue('ford'));
 linkedList1.print();
 console.log(`linkedList size: ${linkedList1.getSize()}`);
 
+// removeFrom
+
+// linkedList1.removeFrom(10);
+// linkedList1.print();
+// linkedList1.removeFrom(0);
+// linkedList1.print();
+// linkedList1.removeFrom(1);
+// linkedList1.print();
+// console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 // prepend
 
