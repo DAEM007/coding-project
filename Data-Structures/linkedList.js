@@ -86,15 +86,15 @@ linkedList1.print();
 
 // insert
 
-linkedList1.insert(0, 'ferrari');
-linkedList1.print();
-linkedList1.insert(0, 'buggatti');
-linkedList1.print();
-linkedList1.insert(1, 'Lamborghini');
-linkedList1.print();
-linkedList1.insert(2, 'BMW');
-linkedList1.print();
-console.log(`linkedList size: ${linkedList1.getSize()}`);
+// linkedList1.insert(0, 'ferrari');
+// linkedList1.print();
+// linkedList1.insert(0, 'buggatti');
+// linkedList1.print();
+// linkedList1.insert(1, 'Lamborghini');
+// linkedList1.print();
+// linkedList1.insert(2, 'BMW');
+// linkedList1.print();
+// console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 
 // prepend
