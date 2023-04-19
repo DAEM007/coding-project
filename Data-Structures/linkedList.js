@@ -47,7 +47,7 @@ class linkedList {
 
     insert(index, value) {
         if(index < 0 || index > this.size) {
-            console.log('Index to insert node is out of bound');
+            console.log('Node to insert is out of bound');
             return;
         }
         if(index === 0) {
@@ -82,21 +82,19 @@ class linkedList {
 const linkedList1 = new linkedList();
 console.log(`Is linkedListEmpty? : ${linkedList1.isEmpty()}`);
 console.log(`linkedList size : ${linkedList1.getSize()}`);
+linkedList1.print();
 
 // insert
 
-
-
-
-
-
-
-
-
-
-
-
-
+linkedList1.insert(0, 'ferrari');
+linkedList1.print();
+linkedList1.insert(0, 'buggatti');
+linkedList1.print();
+linkedList1.insert(1, 'Lamborghini');
+linkedList1.print();
+linkedList1.insert(2, 'BMW');
+linkedList1.print();
+console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 
 // prepend
@@ -118,3 +116,9 @@ console.log(`linkedList size : ${linkedList1.getSize()}`);
 // linkedList1.append('Bugatti');
 // linkedList1.append('Lamborghini');
 // linkedList1.print();
+
+
+
+
+
+
