@@ -64,6 +64,27 @@ class linkedList {
         }
     }
 
+    removeFrom(index) {
+        if(index < 0 || index >= this.size) {
+            console.log('Node to remove is out of bound');
+            return null;
+        }
+        let removedNode;
+        if(index === 0) {
+            removedNode = this.head;
+            this.head = removedNode.next;
+        } else {
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++) {
+                prev = prev.next;
+            }
+            removedNode = prev.next;
+            prev.next = removedNode.next;
+        }
+        this.size--;
+        return removedNode;
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log('The linked list is Empty!');
@@ -86,15 +107,24 @@ linkedList1.print();
 
 // insert
 
-// linkedList1.insert(0, 'ferrari');
-// linkedList1.print();
-// linkedList1.insert(0, 'buggatti');
-// linkedList1.print();
-// linkedList1.insert(1, 'Lamborghini');
-// linkedList1.print();
-// linkedList1.insert(2, 'BMW');
-// linkedList1.print();
-// console.log(`linkedList size: ${linkedList1.getSize()}`);
+linkedList1.insert(0, 'ferrari');
+linkedList1.print();
+linkedList1.insert(0, 'buggatti');
+linkedList1.print();
+linkedList1.insert(1, 'Lamborghini');
+linkedList1.print();
+linkedList1.insert(2, 'BMW');
+linkedList1.print();
+console.log(`linkedList size: ${linkedList1.getSize()}`);
+
+// removeFrom
+linkedList1.removeFrom(10);
+linkedList1.print();
+linkedList1.removeFrom(0);
+linkedList1.print();
+linkedList1.removeFrom(1);
+linkedList1.print();
+console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 
 // prepend
