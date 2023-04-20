@@ -21,6 +21,7 @@ class linkedList {
         return this.size;
     }
 
+    // o(1) time complexity
     prepend(element) {
         const node = new Node(element);
         if(this.isEmpty()) {
@@ -32,6 +33,7 @@ class linkedList {
         this.size++;
     }
 
+    // o(n) time complexity
     append(element) {
         const node = new Node(element);
         if(this.isEmpty()) {
@@ -163,20 +165,20 @@ linkedList1.print();
 
 // insert
 
-linkedList1.insert(0, 'ferrari');
-linkedList1.print();
-linkedList1.insert(0, 'buggatti');
-linkedList1.print();
-linkedList1.insert(1, 'Lamborghini');
-linkedList1.print();
-linkedList1.insert(2, 'BMW');
-linkedList1.print();
+// linkedList1.insert(0, 'ferrari');
+// linkedList1.print();
+// linkedList1.insert(0, 'buggatti');
+// linkedList1.print();
+// linkedList1.insert(1, 'Lamborghini');
+// linkedList1.print();
+// linkedList1.insert(2, 'BMW');
+// linkedList1.print();
 // console.log(`linkedList size: ${linkedList1.getSize()}`);
 
 // reverse
 
-linkedList1.reverse();
-linkedList1.print();
+// linkedList1.reverse();
+// linkedList1.print();
 
 // search
 
