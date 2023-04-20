@@ -129,6 +129,18 @@ class linkedList {
         return -1;
     }
 
+    reverse() {
+        let prev = null;
+        let curr = this.head;
+        while(curr) {
+            let next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        this.head = prev;
+    }
+
     print() {
         if(this.isEmpty()) {
             console.log('The linked list is Empty!');
@@ -159,11 +171,16 @@ linkedList1.insert(1, 'Lamborghini');
 linkedList1.print();
 linkedList1.insert(2, 'BMW');
 linkedList1.print();
-console.log(`linkedList size: ${linkedList1.getSize()}`);
+// console.log(`linkedList size: ${linkedList1.getSize()}`);
+
+// reverse
+
+linkedList1.reverse();
+linkedList1.print();
 
 // search
 
-console.log(linkedList1.search('ferrari'));
+// console.log(linkedList1.search('ferrari'));
 
 // removeValue
 
