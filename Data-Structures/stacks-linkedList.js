@@ -6,7 +6,7 @@ class LinkedListStack {
     }
 
     push(element) {
-        return this.list.prepend(element);
+        this.list.prepend(element);
     }
 
     pop() {
