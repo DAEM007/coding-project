@@ -1,11 +1,5 @@
 
 // Hash table implementation
-// 3 major - operations
-// set
-// get
-// remove
-// hash function 
-
 class HashMap {
     constructor(size) {
         this.size = size;
@@ -21,8 +15,26 @@ class HashMap {
     }
 
     set(key, value) {
-        let index = this.hashFunction(key);
+        const index = this.hashFunction(key);
         this.map[index] = value;
+    }
+
+    get(key) {
+        const index = this.hashFunction(key);
+        return this.map[index];
+    }
+
+    remove(key) {
+        const index = this.hashFunction(key);
+        this.map[index] = undefined;
+    }
+
+    print() {
+        for(let i = 0; i < this.map.length; i++) {
+            if(this.map[i]) {
+                console.log(i, this.map[i]);
+            }
+        }
     }
 
 }
@@ -30,5 +42,11 @@ class HashMap {
 const hash = new HashMap(50);
 
 hash.set('name', 'Emmanuel');
-hash.set('age', 24);
+hash.set('age', '23');
+hash.set('job', 'software engineer');
+hash.set('company', 'Meta');
+
+console.log(hash.get('name'));
+hash.remove('age');
+hash.print();
 
