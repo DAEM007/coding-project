@@ -110,6 +110,7 @@ class binarySearchTree {
         }
     }
 
+    // max value of a tree
     max(root) {
         if(!root.right) {
             return root.value;
