@@ -119,6 +119,21 @@ class binarySearchTree {
         }
     }
 
+    // invert a binary tree
+    // invert(root) {
+    //     if(!root) {
+    //         return root;
+    //     }
+    //     let left = root.left;
+    //     let right = root.right;
+    //     left = root.right;
+    //     right = root.left;
+    //     this.invert(root.left);
+    //     this.invert(root.right);
+    //     // console.log(root);
+    //     return root;
+    // }
+
 }
 
 const bst = new binarySearchTree();
@@ -140,3 +155,4 @@ bst.insert(7);
 // bst.levelOrder(bst.root);
 // console.log(bst.min(bst.root));
 // console.log(bst.max(bst.root));
+console.log(bst.invert(bst.root));
