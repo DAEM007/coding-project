@@ -13,28 +13,52 @@
 // Input: nums = [], target = 0
 // Output: [-1,-1]
 
+// solution 1: less-optimized
+// function searchRange(nums, target) {
+//     left = 0; right= nums.length; 
+//     leftIndex = -1; rightIndex = -1;
+//     while(left <= right) {
+//         const middle = Math.floor((left + right) / 2);
+//         if(target <= nums[middle]) right = middle - 1;
+//         else left = middle + 1;
+//     }
+
+//     leftIndex = left;
+//     left = 0; right = nums.length;
+
+//     while(left <= right) {
+//         const middle = Math.floor((left + right) / 2);
+//         if(target < nums[middle]) right = middle - 1;
+//         else left = middle + 1; 
+//     }
+
+//     rightIndex = right;
+
+//     return leftIndex <= rightIndex ? [leftIndex, rightIndex] : [-1, -1];
+
+// }
+
+//solution 2: more-optimized
 function searchRange(nums, target) {
-    left = 0; right= nums.length; 
-    leftIndex = -1; rightIndex = -1;
+    let left = 0; let right = nums.length - 1;
+    let leftIndex = -1; let rightIndex = -1;
     while(left <= right) {
-        const middle = Math.floor((left + right) / 2);
+        const middle =  Math.floor((left + right) / 2);
         if(target <= nums[middle]) right = middle - 1;
-        else left = middle + 1;
+        else left = middle + 1; 
     }
-
     leftIndex = left;
-    left = 0; right = nums.length;
-
+    left = 0; right = nums.length - 1;
     while(left <= right) {
         const middle = Math.floor((left + right) / 2);
         if(target < nums[middle]) right = middle - 1;
-        else left = middle + 1; 
+        else left = middle + 1;
     }
-
     rightIndex = right;
-
     return leftIndex <= rightIndex ? [leftIndex, rightIndex] : [-1, -1];
-
 }
 
 console.log(searchRange([5,7,7,8,8,10], 8));
+
+
+
