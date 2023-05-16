@@ -119,22 +119,26 @@ class binarySearchTree {
         }
     }
 
-    // invert a binary tree
-    // invert(root) {
-    //     if(!root) {
-    //         return root;
-    //     }
-    //     let left = root.left;
-    //     let right = root.right;
-    //     left = root.right;
-    //     right = root.left;
-    //     this.invert(root.left);
-    //     this.invert(root.right);
-    //     // console.log(root);
-    //     return root;
-    // }
+    delete() {
+        
+    }
 
 }
+
+// invert a binary tree
+// invert(root) {
+//     if(!root) {
+//         return root;
+//     }
+//     let left = root.left;
+//     let right = root.right;
+//     left = root.right;
+//     right = root.left;
+//     this.invert(root.left);
+//     this.invert(root.right);
+//     // console.log(root);
+//     return root;
+// }
 
 const bst = new binarySearchTree();
 console.log(`isEmpty?: ${bst.isEmpty()}`);
