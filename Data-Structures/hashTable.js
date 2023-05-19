@@ -68,14 +68,14 @@ class HashMap {
 
 const hash = new HashMap(50);
 
-hash.set('name', 'Emmanuel');
-// hash.set('name', 'Diana');
-hash.set('mane', 'Damilola');
-hash.set('age', '23');
-hash.set('job', 'software engineer');
-hash.set('company', 'Meta');
+// hash.set('name', 'Emmanuel');
+// // hash.set('name', 'Diana');
+// hash.set('mane', 'Damilola');
+// hash.set('age', '23');
+// hash.set('job', 'software engineer');
+// hash.set('company', 'Meta');
 
-console.log(hash.get('name'));
-hash.remove('black');
-hash.print();
+// console.log(hash.get('name'));
+// hash.remove('black');
+// hash.print();
 
