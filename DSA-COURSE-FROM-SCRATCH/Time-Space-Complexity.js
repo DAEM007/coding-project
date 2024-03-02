@@ -60,3 +60,12 @@ function doubleArr(arr) {
 
 // run-time of o(n) and o(n) space
 // console.log(doubleArr([5, 10, 15, 20]));
+
+// ============= Logarithms - Time and Space Complexity  ================ 
+
+// Recall that, logarithms are simply the inverse of exponentiation. It's complexity (logn) is very good compared to o(n), o(n^2), o(nlogn) ...
+// It's importtant that you recognise this type of complexity for both time and space.
+// Now, certain searching algorithms have logarithmic time complexities..efficient sorting algorithms involve logarithms...some recursive algorithms involve logarithmic space complexity.
+
+// TODO: Analyse the big - o of as many algorithms as you can
+
