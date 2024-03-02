@@ -33,3 +33,30 @@ function logAtMost(n) {
 
 // run-time of o(1)
 // console.log(logAtMost(10000));
+
+
+// ============== Space-complexity =================== 
+
+// challenge: write a function that takes in an array of numbers with length n, and returns the sum of the numbers in the array.
+function addArr(arr) {
+    let total = 0;
+    for(let i = 0; i < arr.length; i++) {
+        total += arr[i];
+    }
+    return total;
+}
+
+// run-time of o(n) and o(1) space
+// console.log(addArr([5, 10, 15, 20]));
+
+// challenge: write a function that takes in an array of numbers with length n, and returns a new array with each numbers twice the initial array.
+function doubleArr(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * 2);
+    }
+    return newArr;
+}
+
+// run-time of o(n) and o(n) space
+// console.log(doubleArr([5, 10, 15, 20]));
