@@ -121,3 +121,14 @@ function getSum( a, b ){
 }
 
 // console.log(getSum(7, 1));
+
+// challenge: Given a number n, write a function that takes in n as an input and prints the pairs of number from (0,0) up until (n,n).
+function printAllPairs(n) {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            console.log(`(${i},${j})`);
+        }
+    }
+}
+
+console.log(printAllPairs(6));
