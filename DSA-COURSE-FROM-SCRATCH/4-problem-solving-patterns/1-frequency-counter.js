@@ -85,7 +85,7 @@ function validAnagram(str1, str2) {
     for(let char of str2) {
         frequencyCounter2[char] ? frequencyCounter2[char]++ : frequencyCounter2[char] = 1;
     }
-    console.log(frequencyCounter1, frequencyCounter2);
+    // console.log(frequencyCounter1, frequencyCounter2);
     for(let key in frequencyCounter1) {
         if(frequencyCounter2[key] !== frequencyCounter1[key]) {
             return false;
