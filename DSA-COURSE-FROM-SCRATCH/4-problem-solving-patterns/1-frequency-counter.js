@@ -47,12 +47,12 @@ function same3(arr1, arr2) {
     let frequencyCounter2 = {};
 
     for(let val of arr1) {
-        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1; // You can further break this down, if you want.
     }
     for(let val of arr2) {
-        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1; // You can further break this down, if you want.
     }
-
+    // console.log(frequencyCounter1, frequencyCounter2); // This is to track and check what we have in the counter...completely optional. You can skip this part of the code.
     for(let key in frequencyCounter1) {
         if(!(key ** 2 in frequencyCounter2)) {
             return false;
@@ -67,6 +67,6 @@ function same3(arr1, arr2) {
 // solution at o(n^2) run-time...this is because indexOf is a loop nested in the for loop.
 // console.log(same([1,2,3], [9,1,4])); 
 // console.log(same2([1,2,3], [9,1,4])); // check solution for same2 again...
-// console.log(same3([1,2,3], [9,1,4]));
+console.log(same3([1,2,3], [9,4,1]));
 
 //  challenge (Anagram): Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase or name formed by the rearranging the letters of another, such as "cinema", formed from "iceman". 
