@@ -67,6 +67,6 @@ function same3(arr1, arr2) {
 // solution at o(n^2) run-time...this is because indexOf is a loop nested in the for loop.
 // console.log(same([1,2,3], [9,1,4])); 
 // console.log(same2([1,2,3], [9,1,4])); // check solution for same2 again...
-console.log(same3([1,2,3], [9,4,1]));
+// console.log(same3([1,2,3], [9,4,1]));
 
 //  challenge (Anagram): Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase or name formed by the rearranging the letters of another, such as "cinema", formed from "iceman". 
